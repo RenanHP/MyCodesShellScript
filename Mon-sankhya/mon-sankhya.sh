@@ -6,13 +6,13 @@ TOTAL_LICENSES=$(grep "Total licenses" $(find /opt/SAS*/log | sort -n | tail -1)
 FREE_LICENSES=$(grep "free licenses" $(find /opt/SAS*/log | sort -n | tail -1) | tail -n 1 | awk '{print $8'} | cut -d ">" -f 2)
 CONNECTED_USERS=$(expr $TOTAL_LICENSES - $FREE_LICENSES)
 
-RetornaValorTotal () {
+LicensaSas () {
 
 echo $TOTAL_LICENSES
 
 }
 
-RetornaValorUsers () {
+UsersConectados () {
 
 echo $CONNECTED_USERS
 
